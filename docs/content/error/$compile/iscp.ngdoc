@@ -14,9 +14,12 @@ myModule.directive('directiveName', function factory() {
       'attrName2': '=localName', // OK
       'attrName3': '<?localName', // OK
       'attrName4': ' = name', // OK
-      'attrName5': 'name',    // ERROR: missing mode @&=
-      'attrName6': 'name=',   // ERROR: must be prefixed with @&=
-      'attrName7': '=name?',  // ERROR: ? must come directly after the mode
+      'attrName5': ' =', // OK
+      'attrName6': ' =?', // OK 
+      'attrName7': ' ?=', // ERROR: ? must come directly after the mode
+      'attrName8': 'name',    // ERROR: missing mode @&=
+      'attrName9': 'name=',   // ERROR: must be prefixed with @&=
+      'attrName10': '=name?',  // ERROR: ? must come directly after the mode
     }
     ...
   }
